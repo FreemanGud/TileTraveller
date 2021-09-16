@@ -1,7 +1,3 @@
-def check_victory(location):
-    if location == [3, 3]:
-        victory = True
-    return victory
 
 def move_north(location):
     location[1] +=1
@@ -32,17 +28,93 @@ def move(movement, location):
         print("Not a valid direction!")
     return location
 
+def local(location):
+    print(location)
+    return location
+
+def travel(location):
+    travel_text = f'You can travel: '
+    if location == [1,1] or location ==[2, 1]:
+        print(travel_text, "(N)orth")
+        movement = input("Direction:")
+        if movement == "n" or movement =="N":
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+
+    elif location == [1,2]:
+        print(travel_text, "(N)orth or (E)ast or (S)outh")
+        movement = input("Direction:")
+        if movement == "n" or movement == "N" or movement == "e" or movement == "E" or movement == "s" or movement == "S" :
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+    
+    elif location == [1,3]:
+        print(travel_text, "(E)ast or (S)outh")
+        movement = input("Direction:")
+        if movement == "e" or movement == "E" or movement == "s" or movement == "S" :
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+    
+    elif location == [2,2]:
+        print(travel_text, "(S)outh or (West)")
+        movement = input("Direction:")
+        if movement == "s" or movement == "S" or movement == "w" or movement == "W" :
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+        
+    elif location == [2,3]:
+        print(travel_text, "(E)ast or (West)")
+        movement = input("Direction:")
+        if movement == "e" or movement == "E" or movement == "w" or movement == "W" :
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+
+    elif location == [3,3]:
+        print(travel_text, "(S)outh or (West)")
+        movement = input("Direction:")
+        if movement == "s" or movement == "S" or movement == "w" or movement == "W" :
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+
+    elif location == [3,2]:
+        print(travel_text, "(N)orth or (S)outh")
+        movement = input("Direction:")
+        if movement == "n" or movement == "N" or movement == "s" or movement == "S":
+            move(movement, location)
+            
+        else:
+            print("Invalid direction!")
+
+    elif location == [3,1]:
+        print("Victory!")
+        
+
+
+        print("fokkaer")
+    return movement, location
+
 def main():
     travel_text = f'You can travel: '
     location = [1, 1]
     running = True
     while running == True:
-        if location == [1, 1] or location == [2,1]:
-            print(travel_text, "north")
-            movement = input("Direction: ")
-            move(movement, location)
-        elif location == []:
-            movement = input("Direction: ")
+        local(location)
+        travel(location)
+
+
+
 
 if __name__ == '__main__':
     main()
