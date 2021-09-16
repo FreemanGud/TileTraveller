@@ -97,17 +97,11 @@ def travel(location):
         else:
             print("Invalid direction!")
 
-    elif location == [3,1]:
-        print("Victory!")
-        # victory = True
 
-
-        print("fokkaer")
+        
     return movement, location
 
-def check_victory(victory):
-    
-    return victory
+
     
 
 def main():
@@ -115,9 +109,9 @@ def main():
     location = [1, 1]
     running = True
     while location != [3, 1]:
-        local(location)
+        # local(location)
         travel(location)
-        
+    print("Victory!")
         
 
 
