@@ -16,14 +16,14 @@ def move_west(location):
     return location
 
 def move(movement, location):
-    if movement == "n" or "N":
+    if movement == "n" or movement == "N":
         move_north(location)
     elif movement == "e" or movement == "E":
         move_east(location)
     elif movement == "s" or movement == "S":
-        move_east(location)
+        move_south(location)
     elif movement == "w" or movement == "W":
-        move_east(location)
+        move_west(location)
     else:
         print("Not a valid direction!")
     return location
@@ -99,19 +99,26 @@ def travel(location):
 
     elif location == [3,1]:
         print("Victory!")
-        
+        # victory = True
 
 
         print("fokkaer")
     return movement, location
 
+def check_victory(victory):
+    
+    return victory
+    
+
 def main():
     travel_text = f'You can travel: '
     location = [1, 1]
     running = True
-    while running == True:
+    while location != [3, 1]:
         local(location)
         travel(location)
+        
+        
 
 
 
