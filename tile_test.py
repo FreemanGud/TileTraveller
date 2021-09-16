@@ -31,7 +31,7 @@ def move(movement, location):
     else:
         print("Not a valid direction!")
     return location
-    
+
 def main():
     travel_text = f'You can travel: '
     location = [1, 1]
@@ -41,8 +41,8 @@ def main():
             print(travel_text, "north")
             movement = input("Direction: ")
             move(movement, location)
-        # elif location == []
-        # movement = input("Direction: ")
+        elif location == []:
+            movement = input("Direction: ")
 
 if __name__ == '__main__':
     main()
